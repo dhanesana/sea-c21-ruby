@@ -14,10 +14,9 @@
 #   Jackson <<user types last name
 #   Nice to meet you, Samuel Leroy Jackson.
 puts "What's your first name?"
-first_name = gets.chomp
+first_name = gets.capitalize.chomp
 puts "What's your middle name?"
-middle_name = gets.chomp
+middle_name = gets.capitalize.chomp
 puts "What's your last name?"
-last_name = gets.chomp
-puts 'Nice to meet you, ' + first_name.capitalize +
-  ' ' + middle_name.capitalize + ' ' + last_name.capitalize + '.'
+last_name = gets.capitalize.chomp
+puts "Nice to meet you, #{first_name} #{middle_name} #{last_name}."
