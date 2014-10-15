@@ -66,7 +66,7 @@ loop do
     year = rand(1930..1950)
     puts "Nana: NOT SINCE #{year}!"
     response = gets.chomp
-  elsif response == 'BYE'
+  else
     puts 'Nana: BYE SWEETIE!'
     break
   end
