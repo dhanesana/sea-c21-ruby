@@ -28,11 +28,21 @@
 
 # rubocop:disable MethodLength
 def old_school_roman_numeral(num)
-  num # change me
+  x = ''
+  x += 'M' if num == 1000
+  x += 'D' if num >= 500 && num < 1000
+  x += 'C' * ((num / 100) % 5)
+  # .even? instead of !== (0 || 2)
+  # can't have LL
+  x += 'L' unless ((num / 50) % 2).even?
+  x += 'X' * ((num / 10) % 5)
+  # can't have VV
+  x += 'V' unless ((num / 5) % 2).even?
+  x + 'I' * (num % 5)
 end
 
 input = ARGV[0].to_i
 
 abort 'Usage: exercise4.rb [1-1000]' unless input.between?(1, 1000)
-
+# input = gets.chomp.to_i
 puts old_school_roman_numeral(input)
