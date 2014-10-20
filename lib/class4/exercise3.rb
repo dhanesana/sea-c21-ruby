@@ -32,8 +32,47 @@
 #
 # TIP #2: Use `return` to preemptively exit the `ask` method.
 
+=begin
+# only change the method: the question change me
+# following is a method
+def ask(question) # question is a variable and also a parameter
+  loop do
+    puts question # outputting question to the terminal
+    answer = gets.chomp # get user input
+    # put answer in an if statement
+    if answer == 'y'
+      # puts 'We can be friends' doesn't work because puts returns nil
+      # puts nil will basically just put a blank line
+      # so get rid of the puts
+      return 'We can be friends!' # return breaks out loop and returns string
+    elsif answer == 'n'
+      return 'Get out of my sight!'
+    else
+      puts 'Try again' # puts because it's not outputting anything without it
+    end
+  end
+end
+=end
+
+# shorten above method like a pro rubyguy
+# question is a variable and also a parameter
 def ask(question)
-  question # change me
+  loop do
+    puts question # outputting question to the terminal
+    answer = gets.chomp # get user input
+    # put answer in an if statement
+    # puts 'We can be friends' doesn't work because puts returns nil
+    # puts nil will basically just put a blank line
+    # so get rid of the puts
+    return 'We can be friends!' if answer == 'y'
+    # return breaks out loop and returns string
+    return 'Get out of my sight!' if answer == 'n'
+    puts 'Try again' # puts because it's not outputting anything without it
+  end
 end
 
-puts ask('Do you like eating tacos? (y or n)')
+# puts method ask
+puts ask('Do you like eating tacos? (y or n)') # the string is an argument
+# the string argument goes into the parameter 'question'
+# it only exists within the scope of the ask method
+# can't just have 'puts ask' because it needs an argument or crash
