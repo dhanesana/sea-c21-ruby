@@ -46,7 +46,7 @@ def modern_roman_numeral(num)
       num -= val[i]
       x += rom[i]
     end
-    # break loop
+    # move on to next item in array
     i += 1
   end
   x
