@@ -36,12 +36,12 @@
 #
 #     ['cat', 'bird'].sort  #=> ['bird', 'cat']
 
-user_input = nil
 words = []
 puts 'Type some words to be sorted alphabetically:'
 
 loop do
   words.push(user_input = gets.downcase.chomp)
+  # words.pop so '' is removed from array
   break if user_input == '' && words.pop
 end
 
