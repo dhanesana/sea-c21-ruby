@@ -32,12 +32,48 @@
 # TIP #3: You only need to change the `modern_roman_numeral` method.
 
 # rubocop:disable MethodLength
+
+=begin
+# old method
 def modern_roman_numeral(num)
-  num # change me
+  rom = %w(M CM D CD C XC L XL X IX V IV I)
+  val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  x = ''
+  i = 0
+  # 12 because 13 items in array
+  while i <= 12
+    while num >= val[i]
+      num -= val[i]
+      x += rom[i]
+    end
+    # break loop
+    i += 1
+  end
+  x
+end
+=end
+
+def modern_roman_numeral(num)
+  rom = %w(M CM D CD C XC L XL X IX V IV I)
+  val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  x = ''
+
+  # 13 items in array
+  13.times do |i|
+    # if num = 15
+    while num >= val[i]
+      # 15 - 10 X = 5
+      # 5 - 5 V = 0
+      # x = XV
+      num -= val[i]
+      x += rom[i]
+    end
+  end
+  x
 end
 
 input = ARGV[0].to_i
 
 abort 'Usage: exercise5.rb [1-1000]' unless input.between?(1, 1000)
-
+# input = gets.chomp.to_i
 puts modern_roman_numeral(input)
