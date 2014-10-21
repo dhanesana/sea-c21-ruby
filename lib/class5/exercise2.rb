@@ -3,11 +3,11 @@
 # 5 points
 #
 # Absolute paths start with a `/`. For example:
-#
+# Absolute works from root directory
 #   /Users/tim/sea-c21-ruby
 #
 # Relative paths don't start with a `/`. For example
-#
+# Relative works from directory you're currently in
 #   lib/class5/database.yml
 #
 # Write a program that displays the absolute path for anyone's
@@ -26,6 +26,8 @@
 #   $ ruby exercise2.rb
 #   /Users/eva/Projects/sea-c21-ruby/lib/class5/database.yml
 #
+# Both are absolute paths. Differences are eva-tim, and Eva's projects dir
+
 # TIP: Here are some methods that you may find useful:
 #
 #   File.absolute_path(relative)  #=> absolute
@@ -70,7 +72,18 @@
 #       '/Users/tim/sea-c21-ruby/lib/class5/'
 
 def database
-  '/change/me'
+  # pwd prints working directory
+
+  # File.absolute_path(__FILE__)
+  # alone will return ab path of exercise
+
+  # File.dirname(File.absolute_path(__FILE__))
+  # alone will return ab path of excercise directory
+  # dirname returns components of long_path string except last one
+
+  File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
+  # concatenating to access database.yml
+  # now we know how to access it!
 end
 
 puts database
