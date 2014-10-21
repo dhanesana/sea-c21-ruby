@@ -14,7 +14,7 @@
 #
 # In this exercise, you'll play with YAML -- a human friendly data serialization
 # format.
-#
+# YAML stands for yet another markup language
 # Your first assignment is to write a program that displays an Array of
 # corporate buzzwords transformed into YAML format:
 #
@@ -32,7 +32,13 @@
 require 'yaml'
 
 def records
-  ['change me']
+  # each buzzword needs to be its own element in array
+  ['Incentivized methodologies',
+   'Seemless innovation',
+   'Corporate synergy',
+   'Scalable globalization',
+   'Monetized assets'
+  ]
 end
-
+# taking ruby data and turning it into yaml string
 puts records.to_yaml
