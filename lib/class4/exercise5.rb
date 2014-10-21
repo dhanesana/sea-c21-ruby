@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-#
+# shell looks at above script and knows where to find ruby
 # 5 points
 #
 # Eventually, someone thought it would be terribly clever if putting a smaller
