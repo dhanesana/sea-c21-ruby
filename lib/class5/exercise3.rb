@@ -59,7 +59,7 @@ def save
   # File.open is how to open a file
   # and f is object file it creates
   File.open(database, 'w') do |f|
-    f.write records_yaml
+    f.write(records_yaml)
   end
 end
 
