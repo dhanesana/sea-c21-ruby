@@ -53,13 +53,13 @@ end
 
 def save
   # YAML description of records array
-  records_yaml = records.to_yaml
+  # records_yaml = records.to_yaml
   # database returns user's database.yml
   # opens file, and writes records_yaml to database.yml
   # File.open is how to open a file
   # and f is object file it creates
   File.open(database, 'w') do |f|
-    f.write(records_yaml)
+    f.write(records.to_yaml)
   end
 end
 
