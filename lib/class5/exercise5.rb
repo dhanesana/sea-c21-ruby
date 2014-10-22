@@ -26,15 +26,41 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  # pwd prints working directory
+
+  # File.absolute_path(__FILE__)
+  # alone will return ab path of exercise
+
+  # File.dirname(File.absolute_path(__FILE__))
+  # alone will return ab path of excercise directory
+  # dirname returns components of long_path string except last one
+
+  File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
+  # concatenating to access database.yml
+  # now we know how to access it!
 end
 
 def load
-  ['replace me']
+  # database returns user's database.yml
+  # File.read loads the text as a string
+
+  # read_db = File.read(database)
+
+  # read_array = YAML::load read_string <= RuboCop violation
+  # read_array => useless assignment to variable
+  # use YAML.load instead of YAML::load for method calls
+  # File.read retrieves strings in YAML format
+  # YAML.load converts YAML format back to original format
+
+  # YAML.load(read_db)
+
+  # make everything one single line
+  YAML.load(File.read(database))
 end
 
 def find(id)
-  id # fix me
+  # id - 1 since first element is 0th element
+  load[id - 1]
 end
 
 input = ARGV[0].to_i
