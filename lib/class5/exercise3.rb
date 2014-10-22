@@ -28,15 +28,37 @@
 require 'yaml'
 
 def records
-  ['replace me']
+  ['Incentivized methodologies',
+   'Seemless innovation',
+   'Corporate synergy',
+   'Scalable globalization',
+   'Monetized assets'
+  ]
 end
 
 def database
-  '/replace/me'
+  # pwd prints working directory
+
+  # File.absolute_path(__FILE__)
+  # alone will return ab path of exercise
+
+  # File.dirname(File.absolute_path(__FILE__))
+  # alone will return ab path of excercise directory
+  # dirname returns components of long_path string except last one
+
+  File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
+  # concatenating to access database.yml
+  # now we know how to access it!
 end
 
 def save
-  false # fix me
+  # YAML description of records array
+  records_yaml = records.to_yaml
+  # database returns user's database.yml
+  # opens file, and writes records_yaml to database.yml
+  File.open(database, 'w') do |f|
+    f.write records_yaml
+  end
 end
 
 save
