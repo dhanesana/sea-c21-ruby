@@ -5,6 +5,9 @@
 # Write a program that displays a Hash of person key-value pairs transformed
 # into YAML format:
 #
+# another word for key-value pairs is attributes
+# ruby implements them using something called a hash
+#
 #   $ ruby exercise1.rb
 #   ---
 #   :name: George Harrison
@@ -18,7 +21,13 @@
 require 'yaml'
 
 def person
-  { change: 'me' }
+  # { key: value }
+  {
+    name: 'George Harrison',
+    age: 58,
+    song: 'Something',
+    url: 'https://www.youtube.com/watch?v=UKAp-jRUp2o'
+  }
 end
 
 puts person.to_yaml
