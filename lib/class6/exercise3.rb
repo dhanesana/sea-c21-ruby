@@ -42,6 +42,7 @@ def database
 end
 
 def save
+  # write yamlized person hash to yml file aka database
   File.write(database, person.to_yaml)
 end
 
