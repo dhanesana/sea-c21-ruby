@@ -22,15 +22,18 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  # File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
+  File.absolute_path('../database.yml', __FILE__)
 end
 
 def load
-  { replace: 'me' }
+  # same from class5 ex4
+  YAML.load(File.read(database))
 end
 
 def find(key)
-  key # fix me
+  # hashes are keyed by strings, in this case - key
+  load[key]
 end
 
 input = ARGV[0]
