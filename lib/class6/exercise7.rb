@@ -23,15 +23,19 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  # File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
+  File.absolute_path('../database.yml', __FILE__)
 end
 
 def load
-  { replace: 'me' }
+  # same from class5 ex4
+  YAML.load(File.read(database))
 end
 
 def remove(key)
-  key # fix me
+  # .delete method to remove key-value pair from hash
+  # don't know why to_sym is necessary :/
+  load.delete(key.to_sym)
 end
 
 input = ARGV[0]
