@@ -32,8 +32,8 @@ def load
 end
 
 def find(key)
-  # hashes are keyed by strings, in this case - key
-  load[key]
+  # hashes are keyed by strings/symbols, in this case - key
+  load[key.to_sym]
 end
 
 input = ARGV[0]
