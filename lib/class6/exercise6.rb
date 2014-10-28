@@ -33,7 +33,7 @@ end
 
 def update(key, value)
   # adding key-value pair to load
-  load[key] = value
+  load[key.to_sym] = value.to_sym
 end
 
 input1, input2 = ARGV
