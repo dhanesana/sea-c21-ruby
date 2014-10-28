@@ -45,30 +45,68 @@
 #
 #     1.plus_forty_two  #=> 43
 
+# have to rely on rspec to see if code works :/
+
+# All class names must start with capital letter
+# File.read - File is a class
+# RSpec is also a class!
 class Integer
+  # for class Integer, we are defining a method that works on integers
+  # so we can call 24.hours_in_seconds (24 being the integer of course)
   def hours_in_seconds
-    # replace me
+    # special variable called self that exists in Ruby
+    # value of self is not in your control so you can't say self = 5
+    # so if we call this method on 24, then self is 24
+    # self is always left of the period
+    self * 60 * 60
+    # convert self(hours) to minutes, then to seconds
   end
 end
 
 class String
+  # amount = 2 is the default parameter if parameter is not defined
   def indent(amount = 2)
-    amount # replace me
+    # "#{amount * " "}#{self}"
+    ' ' * amount + self
   end
 end
 
 class Integer
   def to_roman
-    # replace me
+    num = self
+    arab_to_romans = [
+      [1000, 'M'],
+      [900, 'CM'],
+      [500,  'D'],
+      [400, 'CD'],
+      [100,  'C'],
+      [90,  'XC'],
+      [50,   'L'],
+      [40,  'XL'],
+      [10,   'X'],
+      [9,   'IX'],
+      [5,    'V'],
+      [4,   'IV'],
+      [1,    'I']
+    ]
+    answer = []
+    arab_to_romans.each do |arab_to_roman|
+      arabic, roman = arab_to_roman
+      quotient = num / arabic
+      next if quotient == 0
+      answer.push(roman * quotient)
+      num %= arabic
+    end
+    answer.join
   end
 end
 
 class Array
   def second
-    # replace me
+    self[1]
   end
 
   def third
-    # replace me
+    self[2]
   end
 end
