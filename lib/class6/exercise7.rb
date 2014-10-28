@@ -34,7 +34,6 @@ end
 
 def remove(key)
   # .delete method to remove key-value pair from hash
-  # don't know why to_sym is necessary :/
   load.delete(key.to_sym)
 end
 
