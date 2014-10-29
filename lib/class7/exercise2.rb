@@ -21,9 +21,15 @@ class OrangeTree
   def initialize
     @fruit = 50
   end
+
   # fruit method can return @fruit, but rubocop will require attr_reader
-  def fruit
-    iono = @fruit
-    iono
-  end
+  # def fruit
+  #   iono = @fruit
+  #   iono
+  # end
+
+  # attr_reader = def fruit
+  #                 @fruit
+  #               end
+  attr_reader :fruit
 end
