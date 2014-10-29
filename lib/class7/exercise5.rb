@@ -65,6 +65,6 @@ class OrangeTree
   end
   # define pick method
   def pick(amount = 1)
-    OrangeTree.new(fruit - amount) unless @fruit < amount
+    OrangeTree.new(@fruit - amount) unless @fruit < amount
   end
 end
