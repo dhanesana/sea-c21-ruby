@@ -16,5 +16,12 @@
 #     orange_tree.fruit  #=> 50
 
 class OrangeTree
-  # fix me
+  # initialize runs the moment a new OrangeTree is made
+  def initialize
+    fruit
+  end
+  # fruit sets @fruit to 50
+  def fruit
+    @fruit = 50
+  end
 end
