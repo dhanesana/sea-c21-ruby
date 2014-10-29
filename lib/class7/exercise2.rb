@@ -17,11 +17,12 @@
 
 class OrangeTree
   # initialize runs the moment a new OrangeTree is made
+  # and sets @fruit to 50
   def initialize
-    fruit
-  end
-  # fruit sets @fruit to 50
-  def fruit
     @fruit = 50
+  end
+  # fruit returns @fruit
+  def fruit
+    @fruit
   end
 end
