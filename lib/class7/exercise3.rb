@@ -23,5 +23,17 @@
 #     orange_tree.fruit      #=> 44
 
 class OrangeTree
-  # replace me
+  # initialize runs the moment a new OrangeTree is made
+  # and sets @fruit to 50
+  def initialize
+    @fruit = 50
+  end
+  # fruit returns @fruit
+  def fruit
+    @fruit
+  end
+  # default amount = 1 if no parameter specified
+  def pick!(amount = 1)
+    @fruit -= amount unless @fruit < amount
+  end
 end
