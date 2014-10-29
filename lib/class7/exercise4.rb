@@ -26,5 +26,23 @@
 #     OrangeTree.new(20) != OrangeTree.new(10)
 
 class OrangeTree
-  # replace me
+  # initialize runs the moment a new OrangeTree is made
+  # and sets @fruit to 50
+  # initialize takes a parameter = fruit
+  # which defaults at 50 if not parameter is specified
+  def initialize(fruit = 50)
+    @fruit = fruit
+  end
+  # fruit returns @fruit
+  def fruit
+    @fruit
+  end
+  # default amount = 1 if no parameter specified
+  def pick!(amount = 1)
+    @fruit -= amount unless @fruit < amount
+  end
+  # define == method
+  def ==(other)
+    @fruit == other.fruit
+  end
 end
