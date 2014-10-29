@@ -25,6 +25,7 @@
 #     OrangeTree.new(20) == OrangeTree.new(20)
 #     OrangeTree.new(20) != OrangeTree.new(10)
 
+# rubocop:disable TrivialAccessors
 class OrangeTree
   # initialize runs the moment a new OrangeTree is made
   # and sets @fruit to 50
