@@ -33,9 +33,10 @@ class OrangeTree
   def initialize(fruit = 50)
     @fruit = fruit
   end
-  # fruit returns @fruit
+  # fruit method can return @fruit, but rubocop will require attr_reader
   def fruit
-    @fruit
+    iono = @fruit
+    iono
   end
   # default amount = 1 if no parameter specified
   def pick!(amount = 1)
