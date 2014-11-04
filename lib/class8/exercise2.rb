@@ -15,9 +15,12 @@
 # TIP: Don't over think this one. The simpler the better.
 
 def follow_the_execution(method_param, &block)
-  method_param && block # fix me
+  puts 'Executing the method'
+  puts "method_param is #{method_param}"
+  # method_param & block on single line to avoid rubocop void context
+  method_param && block.call
 end
 
 follow_the_execution('dinner') do
-  # fix me
+  puts 'Executing the block'
 end
