@@ -24,10 +24,10 @@ class Array
   def each_without_yolo(&block)
     # no need for self.each. self is redundant
     each do |object|
-      if object.upcase == 'YOLO'
+      if object.to_s.upcase == 'YOLO'
         block.call('Life is too short')
       else
-        block.call(object)
+        block.call(object.to_s)
       end
     end
   end
